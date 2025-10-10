@@ -125,6 +125,9 @@ gradlew.bat
 .packages
 .package_config.json
 
+# Flutter Development Tools
+devtools_options.yaml
+
 # Dart
 .dart_tool/
 .packages
@@ -134,6 +137,9 @@ pubspec.lock # Normalerweise committed, aber falls gewünscht
 /build/
 .flutter-plugins
 .flutter-plugins-dependencies
+
+# Flutter Metadata
+.metadata
 
 # Test coverage
 coverage/

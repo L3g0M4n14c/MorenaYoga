@@ -91,6 +91,9 @@ tags
 # JDKs und Development Tools
 # =============================================================================
 
+# Flutter SDK (sollte nie im Projekt sein)
+lib/flutter/
+
 # Oracle JDK / OpenJDK
 /oracleJdk*/
 /jdk*/

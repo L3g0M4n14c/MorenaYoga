@@ -1,3 +1,7 @@
+# =============================================================================
+# MorenaYoga Flutter App - Git Ignore Configuration
+# =============================================================================
+
 # Miscellaneous
 *.class
 *.log
@@ -12,26 +16,172 @@
 .swiftpm/
 migrate_working_dir/
 
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# =============================================================================
+# IDE und Editor Dateien
+# =============================================================================
+
 # IntelliJ related
 *.iml
 *.ipr
 *.iws
 .idea/
+*.iws
+out/
 
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Android Studio
+.gradle/
+local.properties
+gradle-wrapper.properties
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Vim
+*.swp
+*.swo
+*~
+tags
+
+# =============================================================================
+# JDKs und Development Tools
+# =============================================================================
+
+# Oracle JDK / OpenJDK
+/oracleJdk*/
+/jdk*/
+/openjdk*/
+/java*/
+*.jdk/
+
+# Maven
+.mvn/
+mvnw
+mvnw.cmd
+
+# Gradle
+.gradle/
+gradlew
+gradlew.bat
+
+# =============================================================================
+# Flutter/Dart spezifische Dateien
+# =============================================================================
 
 # Flutter/Dart/Pub related
 **/doc/api/
 **/ios/Flutter/.last_build_id
 .dart_tool/
+.flutter-plugins
 .flutter-plugins-dependencies
 .pub-cache/
 .pub/
 /build/
 /coverage/
+.packages
+.package_config.json
+
+# Dart
+.dart_tool/
+.packages
+pubspec.lock # Normalerweise committed, aber falls gewünscht
+
+# Flutter
+/build/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Test coverage
+coverage/
+lcov.info
+
+# =============================================================================
+# Native Plattform Build Artefakte
+# =============================================================================
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+/android/build/
+/android/.gradle/
+/android/local.properties
+/android/key.properties
+/android/app/release/
+
+# iOS
+/ios/Flutter/Flutter.framework
+/ios/Flutter/Flutter.podspec
+/ios/Flutter/Generated.xcconfig
+/ios/Flutter/app.flx
+/ios/Flutter/app.zip
+/ios/Flutter/flutter_assets/
+/ios/ServiceDefinitions.json
+/ios/Runner/GeneratedPluginRegistrant.*
+/ios/Pods/
+/ios/.symlinks/
+/ios/build/
+
+# Web
+/web/build/
+
+# Linux
+/linux/build/
+
+# macOS
+/macos/build/
+/macos/Pods/
+
+# Windows
+/windows/build/
+
+# =============================================================================
+# Symbolication und Obfuscation
+# =============================================================================
 
 # Symbolication related
 app.*.symbols
@@ -39,9 +189,98 @@ app.*.symbols
 # Obfuscation related
 app.*.map.json
 
-# Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
+# =============================================================================
+# Logs und temporäre Dateien
+# =============================================================================
 
-/oracleJdk*/
+# Logs
+*.log
+logs/
+*.tmp
+*.temp
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# =============================================================================
+# Datenbanken und Caches
+# =============================================================================
+
+# SQLite
+*.db
+*.sqlite
+*.sqlite3
+
+# Firebase
+.firebase/
+firebase-debug.log
+firestore-debug.log
+
+# =============================================================================
+# Secrets und Konfiguration
+# =============================================================================
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# API Keys und Secrets
+secrets/
+*.key
+*.pem
+*.p12
+*.p8
+*.jks
+keystore.properties
+google-services.json # Falls sensible Daten enthalten
+GoogleService-Info.plist # Falls sensible Daten enthalten
+
+# =============================================================================
+# Dependencies und externe Bibliotheken
+# =============================================================================
+
+# Node modules (falls verwendet)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# CocoaPods
+/ios/Pods/
+/macos/Pods/
+
+# =============================================================================
+# Backup und Archive Dateien
+# =============================================================================
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+
+# Archive files (außer wenn bewusst committed)
+*.tar
+*.tar.gz
+*.zip
+*.rar
+*.7z
+
+# =============================================================================
+# Verschiedene Entwicklungsartefakte
+# =============================================================================
+
+# Testing
+.nyc_output/
+coverage/
+
+# Documentation
+docs/_build/
+
+# Ignore lock files for dependencies (optional, based on team preference)
+# yarn.lock
+# package-lock.json

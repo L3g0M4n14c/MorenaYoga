@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  static const Color primaryColor = Color(0xFF6B73FF);
-  static const Color secondaryColor = Color(0xFF9C27B0);
-  static const Color accentColor = Color(0xFFFF6584);
-  static const Color backgroundColor = Color(0xFFF8F9FA);
-  static const Color surfaceColor = Color(0xFFFFFFFF);
-  static const Color textPrimary = Color(0xFF2D3748);
-  static const Color textSecondary = Color(0xFF718096);
+  // Farben von morenayoga.de
+  static const Color primaryColor = Color(0xFFFEA097); // Korallen-Rosa/Pfirsich
+  static const Color secondaryColor =
+      Color(0xFFE8D8BE); // Dunkleres Beige (Kontrast)
+  static const Color accentColor = Color(0xFFFEA097); // Korallen-Rosa/Pfirsich
+  static const Color backgroundColor = Color(0xFFF8F3EB); // Warmes helles Beige
+  static const Color surfaceColor = Color(0xFFFFFFFF); // Weiß
+  static const Color textPrimary = Color(0xFF0D1A10); // Dunkles Grün
+  static const Color textSecondary =
+      Color(0xFF5A6C5D); // Helleres Grün für Sekundärtext
 
-  // Entspannungsarten Farben
-  static const Color physicalColor = Color(0xFFE53E3E);
-  static const Color mentalColor = Color(0xFF3182CE);
-  static const Color sensoryColor = Color(0xFF00B5D8);
-  static const Color emotionalColor = Color(0xFFED8936);
-  static const Color socialColor = Color(0xFF38A169);
-  static const Color creativeColor = Color(0xFFD69E2E);
-  static const Color spiritualColor = Color(0xFF805AD5);
+  // Entspannungsarten Farben - angepasst an die Website-Ästhetik
+  static const Color physicalColor = Color(0xFFD4A59A); // Warmes Terrakotta
+  static const Color mentalColor = Color(0xFFA8B5C7); // Sanftes Blau-Grau
+  static const Color sensoryColor = Color(0xFFB8D4D3); // Jade
+  static const Color emotionalColor = Color(0xFFFEA097); // Pfirsich (Primary)
+  static const Color socialColor = Color(0xFFC4D4B6); // Salbeigrün
+  static const Color creativeColor = Color(0xFFE8C4A0); // Sanftes Gold
+  static const Color spiritualColor = Color(0xFFD4BFCF); // Lavendel
 
   static ThemeData get lightTheme {
     return ThemeData(

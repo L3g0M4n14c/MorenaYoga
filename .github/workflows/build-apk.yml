@@ -27,6 +27,13 @@ jobs:
     - name: Get dependencies
       run: flutter pub get
     
+    - name: Setup Gradle
+      run: |
+        cd android
+        chmod +x gradlew
+        ./gradlew wrapper --gradle-version=8.11.1
+        cd ..
+    
     - name: Build APK
       run: flutter build apk --release
     

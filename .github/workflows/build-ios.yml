@@ -1,0 +1,54 @@
+name: Build iOS App
+
+on:
+  workflow_dispatch:  # Manueller Start über GitHub UI
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.27.1'
+        channel: 'stable'
+    
+    - name: Get dependencies
+      run: flutter pub get
+    
+    - name: Install CocoaPods
+      run: |
+        cd ios
+        pod install
+        cd ..
+    
+    - name: Build iOS (Debug - ohne Signatur)
+      run: flutter build ios --debug --no-codesign
+    
+    - name: Create IPA (Debug)
+      run: |
+        mkdir -p Payload
+        cp -r build/ios/iphoneos/Runner.app Payload/
+        zip -r MorenaYoga-Debug.ipa Payload
+        rm -rf Payload
+    
+    - name: Upload IPA (Debug)
+      uses: actions/upload-artifact@v4
+      with:
+        name: morena-yoga-ios-debug
+        path: MorenaYoga-Debug.ipa
+        
+    # Optional: Build mit Signatur (benötigt Secrets)
+    # Uncomment wenn Apple Developer Account konfiguriert ist
+    # - name: Build iOS (Release - signiert)
+    #   env:
+    #     MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+    #     FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
+    #   run: |
+    #     flutter build ios --release
+    #     # Hier würde Fastlane für Signierung kommen

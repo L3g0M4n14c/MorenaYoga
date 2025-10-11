@@ -3,73 +3,73 @@ import '../models/relaxation_area.dart';
 class RecommendationData {
   static const Map<RelaxationType, List<String>> recommendations = {
     RelaxationType.physical: [
-      '🚶‍♀️ Machen Sie täglich einen 20-30 minütigen Spaziergang',
-      '🧘‍♀️ Probieren Sie Yoga oder Stretching aus (z.B. 10 Min. am Morgen)',
-      '🏊‍♀️ Finden Sie eine Sportart, die Ihnen Freude bereitet',
-      '💆‍♀️ Gönnen Sie sich regelmäßige Massagen oder Selbstmassagen',
-      '🛁 Nehmen Sie entspannende Bäder mit ätherischen Ölen',
-      '🌳 Verbringen Sie Zeit in der Natur und bewegen Sie sich dort',
-      '⚡ Bauen Sie kleine Bewegungspausen in Ihren Alltag ein',
+      '🚶‍♀️ Mach täglich einen 20-30 minütigen Spaziergang',
+      '🧘‍♀️ Probiere Yoga oder Stretching aus (z.B. 10 Min. am Morgen)',
+      '🏊‍♀️ Finde eine Sportart, die dir Freude bereitet',
+      '💆‍♀️ Gönn dir regelmäßige Massagen oder Selbstmassagen',
+      '🛁 Nimm entspannende Bäder mit ätherischen Ölen',
+      '🌳 Verbringe Zeit in der Natur und bewege dich dort',
+      '⚡ Baue kleine Bewegungspausen in deinen Alltag ein',
     ],
     RelaxationType.mental: [
-      '🧘‍♂️ Praktizieren Sie täglich 5-10 Minuten Meditation',
-      '📚 Lesen Sie Bücher, die Sie entspannen und inspirieren',
-      '🎵 Hören Sie beruhigende Musik oder Naturgeräusche',
-      '📱 Nutzen Sie Achtsamkeits-Apps für geführte Meditationen',
-      '🌅 Beginnen Sie den Tag mit einer kurzen Achtsamkeitsübung',
-      '📝 Führen Sie ein Dankbarkeitstagebuch',
-      '🧠 Praktizieren Sie bewusstes Atmen bei Stress',
-      '🎯 Fokussieren Sie sich auf eine Sache zur Zeit',
+      '🧘‍♂️ Praktiziere täglich 5-10 Minuten Meditation',
+      '📚 Lies Bücher, die dich entspannen und inspirieren',
+      '🎵 Hör beruhigende Musik oder Naturgeräusche',
+      '📱 Nutze Achtsamkeits-Apps für geführte Meditationen',
+      '🌅 Beginne den Tag mit einer kurzen Achtsamkeitsübung',
+      '📝 Führe ein Dankbarkeitstagebuch',
+      '🧠 Praktiziere bewusstes Atmen bei Stress',
+      '🎯 Fokussiere dich auf eine Sache zur Zeit',
     ],
     RelaxationType.emotional: [
-      '🎨 Nutzen Sie kreative Ausdrucksformen (Malen, Musik, Schreiben)',
-      '😊 Lachen Sie bewusst mehr - schauen Sie Komödien oder treffen Sie lustige Menschen',
-      '💭 Akzeptieren Sie Ihre Gefühle, ohne sie zu bewerten',
-      '🤗 Suchen Sie körperlichen Kontakt (Umarmungen, Kuscheln mit Haustieren)',
-      '🎭 Probieren Sie Rollenspiele oder Theater aus',
-      '💪 Lernen Sie Techniken zur emotionalen Regulation',
-      '🌈 Umgeben Sie sich mit Farben und Dingen, die Sie glücklich machen',
-      '📱 Begrenzen Sie negative Medienkonsum',
+      '🎨 Nutze kreative Ausdrucksformen (Malen, Musik, Schreiben)',
+      '😊 Lache bewusst mehr - schau Komödien oder triff lustige Menschen',
+      '💭 Akzeptiere deine Gefühle, ohne sie zu bewerten',
+      '🤗 Suche körperlichen Kontakt (Umarmungen, Kuscheln mit Haustieren)',
+      '🎭 Probiere Rollenspiele oder Theater aus',
+      '💪 Lerne Techniken zur emotionalen Regulation',
+      '🌈 Umgib dich mit Farben und Dingen, die dich glücklich machen',
+      '📱 Begrenze negativen Medienkonsum',
     ],
     RelaxationType.social: [
-      '👥 Planen Sie regelmäßige Treffen mit Freunden und Familie',
-      '🎉 Nehmen Sie an Gruppenaktivitäten oder Kursen teil',
-      '🤝 Engagieren Sie sich ehrenamtlich in der Gemeinschaft',
-      '💬 Führen Sie tiefere Gespräche statt Small Talk',
-      '🌐 Treten Sie Interessensgruppen oder Vereinen bei',
-      '🎲 Spielen Sie Gesellschaftsspiele mit anderen',
-      '🍽️ Teilen Sie Mahlzeiten mit anderen Menschen',
-      '🚶‍♀️ Unternehmen Sie gemeinsame Aktivitäten in der Natur',
+      '👥 Plan regelmäßige Treffen mit Freunden und Familie',
+      '🎉 Nimm an Gruppenaktivitäten oder Kursen teil',
+      '🤝 Engagiere dich ehrenamtlich in der Gemeinschaft',
+      '💬 Führe tiefere Gespräche statt Small Talk',
+      '🌐 Tritt Interessensgruppen oder Vereinen bei',
+      '🎲 Spiel Gesellschaftsspiele mit anderen',
+      '🍽️ Teile Mahlzeiten mit anderen Menschen',
+      '🚶‍♀️ Unternimm gemeinsame Aktivitäten in der Natur',
     ],
     RelaxationType.spiritual: [
-      '🙏 Entwickeln Sie eine tägliche Dankbarkeitspraxis',
-      '🌅 Verbringen Sie bewusst Zeit in der Natur',
-      '📿 Probieren Sie Meditation oder Gebet aus',
-      '📖 Lesen Sie spirituelle oder philosophische Texte',
-      '🕯️ Schaffen Sie einen friedlichen Raum für Reflexion',
-      '🌌 Betrachten Sie den Sternenhimmel und reflektieren Sie über das Leben',
-      '🎯 Definieren Sie Ihre Werte und leben Sie danach',
-      '💫 Praktizieren Sie Vergebung - sich selbst und anderen gegenüber',
+      '🙏 Entwickle eine tägliche Dankbarkeitspraxis',
+      '🌅 Verbringe bewusst Zeit in der Natur',
+      '📿 Probiere Meditation oder Gebet aus',
+      '📖 Lies spirituelle oder philosophische Texte',
+      '🕯️ Schaffe einen friedlichen Raum für Reflexion',
+      '🌌 Betrachte den Sternenhimmel und reflektiere über das Leben',
+      '🎯 Definiere deine Werte und lebe danach',
+      '💫 Praktiziere Vergebung - dir selbst und anderen gegenüber',
     ],
     RelaxationType.sensory: [
-      '� Verwenden Sie ätherische Öle und Düfte zur Entspannung',
-      '� Hören Sie bewusst entspannende Musik oder Naturgeräusche',
-      '�‍♀️ Gönnen Sie sich regelmäßige Massagen oder Selbstmassagen',
-      '🛁 Nehmen Sie warme Bäder mit beruhigenden Zusätzen',
-      '� Beobachten Sie bewusst schöne Momente (Sonnenaufgang, Natur)',
-      '� Praktizieren Sie achtsame Berührung und Tastübungen',
-      '🧘‍♀️ Nutzen Sie Aromatherapie für tiefe Entspannung',
-      '🌿 Umgeben Sie sich mit angenehmen Texturen und Materialien',
+      '� Verwende ätherische Öle und Düfte zur Entspannung',
+      '� Hör bewusst entspannende Musik oder Naturgeräusche',
+      '�‍♀️ Gönn dir regelmäßige Massagen oder Selbstmassagen',
+      '🛁 Nimm warme Bäder mit beruhigenden Zusätzen',
+      '� Beobachte bewusst schöne Momente (Sonnenaufgang, Natur)',
+      '� Praktiziere achtsame Berührung und Tastübungen',
+      '🧘‍♀️ Nutze Aromatherapie für tiefe Entspannung',
+      '🌿 Umgib dich mit angenehmen Texturen und Materialien',
     ],
     RelaxationType.creative: [
-      '🎨 Malen, zeichnen oder skizzieren Sie regelmäßig',
-      '✍️ Führen Sie ein kreatives Tagebuch oder schreiben Sie Geschichten',
-      '🧶 Probieren Sie handwerkliche Tätigkeiten wie Stricken oder Häkeln',
-      '📸 Entdecken Sie die Fotografie als kreativen Ausdruck',
-      '� Nehmen Sie an Theater- oder Improvisationsgruppen teil',
-      '🎼 Lernen Sie ein Musikinstrument oder singen Sie',
-      '🏺 Probieren Sie Töpfern oder andere handwerkliche Künste',
-      '💃 Tanzen Sie - alleine oder in der Gruppe',
+      '🎨 Male, zeichne oder skizziere regelmäßig',
+      '✍️ Führe ein kreatives Tagebuch oder schreibe Geschichten',
+      '🧶 Probiere handwerkliche Tätigkeiten wie Stricken oder Häkeln',
+      '📸 Entdecke die Fotografie als kreativen Ausdruck',
+      '� Nimm an Theater- oder Improvisationsgruppen teil',
+      '🎼 Lerne ein Musikinstrument oder singe',
+      '🏺 Probiere Töpfern oder andere handwerkliche Künste',
+      '💃 Tanze - alleine oder in der Gruppe',
     ],
   };
 
@@ -80,17 +80,17 @@ class RecommendationData {
   static String getMotivationalMessage(RelaxationType type) {
     switch (type) {
       case RelaxationType.physical:
-        return 'Ihr Körper ist Ihr Tempel - behandeln Sie ihn mit Liebe und Aufmerksamkeit!';
+        return 'Dein Körper ist dein Tempel - behandle ihn mit Liebe und Aufmerksamkeit!';
       case RelaxationType.mental:
         return 'Ein ruhiger Geist ist die Quelle innerer Stärke und Klarheit.';
       case RelaxationType.emotional:
-        return 'Ihre Gefühle sind wertvoll - lernen Sie, sie zu verstehen und zu schätzen.';
+        return 'Deine Gefühle sind wertvoll - lerne, sie zu verstehen und zu schätzen.';
       case RelaxationType.social:
         return 'Echte Verbindungen zu anderen Menschen nähren die Seele.';
       case RelaxationType.spiritual:
-        return 'Die Verbindung zu etwas Größerem gibt Ihrem Leben Sinn und Tiefe.';
+        return 'Die Verbindung zu etwas Größerem gibt deinem Leben Sinn und Tiefe.';
       case RelaxationType.sensory:
-        return 'Ihre Sinne sind das Tor zu tiefer Entspannung und bewusster Wahrnehmung.';
+        return 'Deine Sinne sind das Tor zu tiefer Entspannung und bewusster Wahrnehmung.';
       case RelaxationType.creative:
         return 'Kreativität ist der Schlüssel zu innerer Freiheit und authentischem Selbstausdruck.';
     }

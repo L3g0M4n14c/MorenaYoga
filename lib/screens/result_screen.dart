@@ -14,7 +14,7 @@ class ResultScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Ihre Ergebnisse'),
+        title: const Text('Deine Ergebnisse'),
         backgroundColor: Colors.transparent,
         automaticallyImplyLeading: false,
         actions: [
@@ -44,7 +44,7 @@ class ResultScreen extends StatelessWidget {
               children: [
                 // Überschrift
                 Text(
-                  'Ihre Entspannungsanalyse',
+                  'Deine Entspannungsanalyse',
                   style: Theme.of(context).textTheme.headlineLarge,
                 ),
                 const SizedBox(height: 8),
@@ -156,12 +156,12 @@ class ResultScreen extends StatelessWidget {
     if (averageScore >= 80) {
       cardColor = Colors.green;
       title = 'Ausgezeichnet!';
-      subtitle = 'Sie sind sehr gut entspannt';
+      subtitle = 'Du bist sehr gut entspannt';
       icon = Icons.star;
     } else if (averageScore >= 60) {
       cardColor = Colors.orange;
       title = 'Gut';
-      subtitle = 'Sie haben eine gute Balance';
+      subtitle = 'Du hast eine gute Balance';
       icon = Icons.thumb_up;
     } else {
       cardColor = Colors.red;
@@ -176,7 +176,10 @@ class ResultScreen extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [cardColor.withValues(alpha: 0.1), cardColor.withValues(alpha: 0.05)],
+            colors: [
+              cardColor.withValues(alpha: 0.1),
+              cardColor.withValues(alpha: 0.05)
+            ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),

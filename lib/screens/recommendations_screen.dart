@@ -15,7 +15,7 @@ class RecommendationsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Ihre persönlichen Empfehlungen'),
+        title: const Text('Deine persönlichen Empfehlungen'),
         backgroundColor: Colors.transparent,
       ),
       body: SingleChildScrollView(
@@ -53,7 +53,7 @@ class RecommendationsScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    'Basierend auf Ihren ${deficitAreas.length} Bereichen mit Verbesserungspotential',
+                    'Basierend auf deinen ${deficitAreas.length} Bereichen mit Verbesserungspotential',
                     style: const TextStyle(
                       fontSize: 16,
                       color: Colors.white70,
@@ -323,7 +323,7 @@ class RecommendationsScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 4),
                   Text(
-                    'Kleine, konsequente Schritte führen zu großen Veränderungen. Beginnen Sie mit einer Sache und bauen Sie nach und nach weitere Gewohnheiten auf.',
+                    'Kleine, konsequente Schritte führen zu großen Veränderungen. Beginne mit einer Sache und baue nach und nach weitere Gewohnheiten auf.',
                     style: TextStyle(fontSize: 14),
                     textAlign: TextAlign.center,
                   ),
@@ -338,12 +338,12 @@ class RecommendationsScreen extends StatelessWidget {
 
   List<String> _getGeneralTips() {
     return [
-      'Beginnen Sie mit kleinen Schritten - 5-10 Minuten täglich reichen für den Anfang',
-      'Seien Sie geduldig mit sich selbst - Veränderung braucht Zeit',
-      'Kombinieren Sie verschiedene Entspannungstechniken für beste Ergebnisse',
-      'Planen Sie Entspannung aktiv in Ihren Kalender ein',
-      'Finden Sie Aktivitäten, die Ihnen wirklich Freude bereiten',
-      'Reduzieren Sie Stressquellen, wo immer es möglich ist',
+      'Beginne mit kleinen Schritten - 5-10 Minuten täglich reichen für den Anfang',
+      'Sei geduldig mit dir selbst - Veränderung braucht Zeit',
+      'Kombiniere verschiedene Entspannungstechniken für beste Ergebnisse',
+      'Plane Entspannung aktiv in deinen Kalender ein',
+      'Finde Aktivitäten, die dir wirklich Freude bereiten',
+      'Reduziere Stressquellen, wo immer es möglich ist',
     ];
   }
 

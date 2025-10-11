@@ -30,115 +30,118 @@ class ResultScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Consumer<SurveyProvider>(
-        builder: (context, provider, child) {
-          final result = provider.result;
-          if (result == null) {
-            return const Center(child: CircularProgressIndicator());
-          }
+      body: SafeArea(
+        child: Consumer<SurveyProvider>(
+          builder: (context, provider, child) {
+            final result = provider.result;
+            if (result == null) {
+              return const Center(child: CircularProgressIndicator());
+            }
 
-          return SingleChildScrollView(
-            padding: const EdgeInsets.all(24),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // Überschrift
-                Text(
-                  'Deine Entspannungsanalyse',
-                  style: Theme.of(context).textTheme.headlineLarge,
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  'Basierend auf den 7 Arten der Entspannung',
-                  style: Theme.of(context).textTheme.bodyMedium,
-                ),
-                const SizedBox(height: 32),
+            return SingleChildScrollView(
+              padding: const EdgeInsets.all(24),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Überschrift
+                  Text(
+                    'Deine Entspannungsanalyse',
+                    style: Theme.of(context).textTheme.headlineLarge,
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    'Basierend auf den 7 Arten der Entspannung',
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
+                  const SizedBox(height: 32),
 
-                // Gesamtübersicht
-                _buildOverviewCard(context, result),
-                const SizedBox(height: 24),
+                  // Gesamtübersicht
+                  _buildOverviewCard(context, result),
+                  const SizedBox(height: 24),
 
-                // Detailergebnisse
-                Text(
-                  'Detaillierte Ergebnisse',
-                  style: Theme.of(context).textTheme.headlineMedium,
-                ),
-                const SizedBox(height: 16),
+                  // Detailergebnisse
+                  Text(
+                    'Detaillierte Ergebnisse',
+                    style: Theme.of(context).textTheme.headlineMedium,
+                  ),
+                  const SizedBox(height: 16),
 
-                ...RelaxationType.values.map((type) {
-                  final area = RelaxationArea.getByType(type);
-                  final score = result.scores[type] ?? 0;
-                  final level = result.levels[type] ?? RelaxationLevel.critical;
-                  final isDeficit = result.deficitAreas.contains(type);
+                  ...RelaxationType.values.map((type) {
+                    final area = RelaxationArea.getByType(type);
+                    final score = result.scores[type] ?? 0;
+                    final level =
+                        result.levels[type] ?? RelaxationLevel.critical;
+                    final isDeficit = result.deficitAreas.contains(type);
 
-                  return _buildAreaResult(
-                    context,
-                    area,
-                    score,
-                    level,
-                    isDeficit,
-                  );
-                }),
+                    return _buildAreaResult(
+                      context,
+                      area,
+                      score,
+                      level,
+                      isDeficit,
+                    );
+                  }),
 
-                const SizedBox(height: 32),
+                  const SizedBox(height: 32),
 
-                // Aktionsbuttons
-                if (result.deficitAreas.isNotEmpty) ...[
+                  // Aktionsbuttons
+                  if (result.deficitAreas.isNotEmpty) ...[
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => RecommendationsScreen(
+                                deficitAreas: result.deficitAreas,
+                              ),
+                            ),
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: AppTheme.primaryColor,
+                          padding: const EdgeInsets.symmetric(vertical: 16),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                        ),
+                        child: const Text(
+                          'Empfehlungen ansehen',
+                          style: TextStyle(fontSize: 16),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                  ],
+
                   SizedBox(
                     width: double.infinity,
-                    child: ElevatedButton(
+                    child: OutlinedButton(
                       onPressed: () {
-                        Navigator.of(context).push(
+                        provider.reset();
+                        Navigator.of(context).pushAndRemoveUntil(
                           MaterialPageRoute(
-                            builder: (context) => RecommendationsScreen(
-                              deficitAreas: result.deficitAreas,
-                            ),
-                          ),
+                              builder: (context) => const WelcomeScreen()),
+                          (route) => false,
                         );
                       },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: AppTheme.primaryColor,
+                      style: OutlinedButton.styleFrom(
                         padding: const EdgeInsets.symmetric(vertical: 16),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
                       ),
                       child: const Text(
-                        'Empfehlungen ansehen',
+                        'Test wiederholen',
                         style: TextStyle(fontSize: 16),
                       ),
                     ),
                   ),
-                  const SizedBox(height: 16),
                 ],
-
-                SizedBox(
-                  width: double.infinity,
-                  child: OutlinedButton(
-                    onPressed: () {
-                      provider.reset();
-                      Navigator.of(context).pushAndRemoveUntil(
-                        MaterialPageRoute(
-                            builder: (context) => const WelcomeScreen()),
-                        (route) => false,
-                      );
-                    },
-                    style: OutlinedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(vertical: 16),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                    ),
-                    child: const Text(
-                      'Test wiederholen',
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          );
-        },
+              ),
+            );
+          },
+        ),
       ),
     );
   }

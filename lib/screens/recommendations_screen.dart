@@ -18,66 +18,68 @@ class RecommendationsScreen extends StatelessWidget {
         title: const Text('Deine persönlichen Empfehlungen'),
         backgroundColor: Colors.transparent,
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(24),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Header
-            Container(
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                gradient: const LinearGradient(
-                  colors: [AppTheme.primaryColor, AppTheme.secondaryColor],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: Column(
-                children: [
-                  const Icon(
-                    Icons.lightbulb,
-                    size: 48,
-                    color: Colors.white,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Header
+              Container(
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    colors: [AppTheme.primaryColor, AppTheme.secondaryColor],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
                   ),
-                  const SizedBox(height: 16),
-                  const Text(
-                    'Maßgeschneiderte Empfehlungen',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: Column(
+                  children: [
+                    const Icon(
+                      Icons.lightbulb,
+                      size: 48,
                       color: Colors.white,
                     ),
-                    textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    'Basierend auf deinen ${deficitAreas.length} Bereichen mit Verbesserungspotential',
-                    style: const TextStyle(
-                      fontSize: 16,
-                      color: Colors.white70,
+                    const SizedBox(height: 16),
+                    const Text(
+                      'Maßgeschneiderte Empfehlungen',
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                      textAlign: TextAlign.center,
                     ),
-                    textAlign: TextAlign.center,
-                  ),
-                ],
+                    const SizedBox(height: 8),
+                    Text(
+                      'Basierend auf deinen ${deficitAreas.length} Bereichen mit Verbesserungspotential',
+                      style: const TextStyle(
+                        fontSize: 16,
+                        color: Colors.white70,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
               ),
-            ),
 
-            const SizedBox(height: 32),
+              const SizedBox(height: 32),
 
-            // Empfehlungen für jeden Defizitbereich
-            ...deficitAreas.map((area) {
-              return _buildAreaRecommendations(context, area);
-            }),
+              // Empfehlungen für jeden Defizitbereich
+              ...deficitAreas.map((area) {
+                return _buildAreaRecommendations(context, area);
+              }),
 
-            const SizedBox(height: 24),
+              const SizedBox(height: 24),
 
-            // Allgemeine Tipps
-            _buildGeneralTips(context),
+              // Allgemeine Tipps
+              _buildGeneralTips(context),
 
-            const SizedBox(height: 32),
-          ],
+              const SizedBox(height: 32),
+            ],
+          ),
         ),
       ),
     );

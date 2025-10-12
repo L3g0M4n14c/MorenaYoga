@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/relaxation_area.dart';
 import '../data/recommendations.dart';
 import '../theme/app_theme.dart';
+import 'relaxation_info_screen.dart';
 
 class RecommendationsScreen extends StatelessWidget {
   final List<RelaxationType> deficitAreas;
@@ -17,6 +18,19 @@ class RecommendationsScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Deine persönlichen Empfehlungen'),
         backgroundColor: Colors.transparent,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.info_outline),
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const RelaxationInfoScreen(),
+                ),
+              );
+            },
+            tooltip: 'Mehr über die 7 Faktoren',
+          ),
+        ],
       ),
       body: SafeArea(
         child: SingleChildScrollView(

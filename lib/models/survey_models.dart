@@ -42,11 +42,11 @@ class SurveyResult {
 }
 
 enum RelaxationLevel {
-  excellent,  // 80-100%
-  good,       // 60-80%
-  moderate,   // 40-60%
-  poor,       // 20-40%
-  critical,   // 0-20%
+  excellent, // 80-100%
+  good, // 60-80%
+  moderate, // 40-60%
+  poor, // 20-40%
+  critical, // 0-20%
 }
 
 extension RelaxationLevelExtension on RelaxationLevel {

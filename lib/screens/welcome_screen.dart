@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'survey_screen.dart';
 import 'history_screen.dart';
+import 'relaxation_info_screen.dart';
 import '../theme/app_theme.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -13,6 +14,17 @@ class WelcomeScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         actions: [
+          IconButton(
+            icon: const Icon(Icons.info_outline),
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const RelaxationInfoScreen(),
+                ),
+              );
+            },
+            tooltip: '7 Faktoren der Entspannung',
+          ),
           IconButton(
             icon: const Icon(Icons.history),
             onPressed: () {
@@ -155,6 +167,31 @@ class WelcomeScreen extends StatelessWidget {
                         fontSize: 18,
                         fontWeight: FontWeight.w600,
                       ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 12),
+
+                // Info Button
+                SizedBox(
+                  width: double.infinity,
+                  child: OutlinedButton.icon(
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const RelaxationInfoScreen(),
+                        ),
+                      );
+                    },
+                    icon: const Icon(Icons.lightbulb_outline),
+                    label: const Text('Die 7 Faktoren verstehen'),
+                    style: OutlinedButton.styleFrom(
+                      foregroundColor: Colors.white,
+                      side: const BorderSide(color: Colors.white, width: 2),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      padding: const EdgeInsets.symmetric(vertical: 16),
                     ),
                   ),
                 ),

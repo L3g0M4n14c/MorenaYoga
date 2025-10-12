@@ -2,8 +2,10 @@ import 'package:flutter/foundation.dart';
 import '../models/survey_models.dart';
 import '../models/relaxation_area.dart';
 import '../data/survey_questions.dart';
+import '../services/history_storage_service.dart';
 
 class SurveyProvider extends ChangeNotifier {
+  final HistoryStorageService _historyService = HistoryStorageService();
   final List<QuestionAnswer> _answers = [];
   int _currentQuestionIndex = 0;
   SurveyResult? _result;
@@ -87,6 +89,9 @@ class SurveyProvider extends ChangeNotifier {
       levels: levels,
       deficitAreas: deficitAreas,
     );
+
+    // Speichere das Ergebnis im Verlauf
+    _historyService.saveResult(_result!);
   }
 
   RelaxationLevel _getRelaxationLevel(double percentage) {

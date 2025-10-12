@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'survey_screen.dart';
+import 'history_screen.dart';
 import '../theme/app_theme.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -8,6 +9,23 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.history),
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const HistoryScreen(),
+                ),
+              );
+            },
+            tooltip: 'Verlauf anzeigen',
+          ),
+        ],
+      ),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(

@@ -6,6 +6,7 @@ import '../models/survey_models.dart';
 import '../theme/app_theme.dart';
 import 'recommendations_screen.dart';
 import 'welcome_screen.dart';
+import 'history_screen.dart';
 
 class ResultScreen extends StatelessWidget {
   const ResultScreen({super.key});
@@ -18,6 +19,17 @@ class ResultScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         automaticallyImplyLeading: false,
         actions: [
+          IconButton(
+            icon: const Icon(Icons.history),
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const HistoryScreen(),
+                ),
+              );
+            },
+            tooltip: 'Verlauf anzeigen',
+          ),
           IconButton(
             icon: const Icon(Icons.refresh),
             onPressed: () {

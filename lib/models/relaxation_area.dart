@@ -41,9 +41,15 @@ class RelaxationArea {
     RelaxationArea(
       type: RelaxationType.emotional,
       name: 'Emotionale Entspannung',
-      description: 'Umgang mit Gefühlen und emotionalem Stress',
+      description:
+          'Verarbeitung und Regulation von Gefühlen und emotionalem Stress',
       icon: '❤️',
-      keywords: ['Gefühle', 'Musik', 'Kunst', 'Journaling'],
+      keywords: [
+        'Gefühle',
+        'Selbstreflexion',
+        'Journaling',
+        'Emotionale Balance'
+      ],
     ),
     RelaxationArea(
       type: RelaxationType.social,
@@ -69,9 +75,10 @@ class RelaxationArea {
     RelaxationArea(
       type: RelaxationType.creative,
       name: 'Kreative Entspannung',
-      description: 'Entspannung durch kreative Tätigkeiten und Ausdruck',
+      description:
+          'Entspannung durch den Akt des Erschaffens und handwerkliche Tätigkeiten',
       icon: '🎨',
-      keywords: ['Kreativität', 'Kunst', 'Basteln', 'Schreiben', 'Gestalten'],
+      keywords: ['Kreativität', 'Handwerk', 'Basteln', 'Gestalten', 'Flow'],
     ),
   ];
 

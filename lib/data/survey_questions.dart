@@ -71,7 +71,8 @@ class SurveyQuestions {
     ),
     Question(
       id: 'emotional_3',
-      question: 'Nutzt du kreative Aktivitäten zum emotionalen Ausgleich?',
+      question:
+          'Wie oft reflektierst du deine Gefühle (z.B. durch Journaling oder Gespräche)?',
       relatedArea: RelaxationType.emotional,
       options: ['Nie', 'Selten', 'Gelegentlich', 'Oft', 'Sehr oft'],
     ),
@@ -167,27 +168,29 @@ class SurveyQuestions {
     Question(
       id: 'creative_1',
       question:
-          'Wie oft beschäftigst du dich mit kreativen Tätigkeiten (Malen, Schreiben, Basteln)?',
+          'Wie oft beschäftigst du dich mit kreativen Tätigkeiten (Malen, Basteln, Handwerk)?',
       relatedArea: RelaxationType.creative,
       options: ['Nie', 'Selten', 'Manchmal', 'Regelmäßig', 'Sehr oft'],
     ),
     Question(
       id: 'creative_2',
-      question: 'Wie entspannend empfindest du kreative Aktivitäten?',
+      question:
+          'Erlebst du beim kreativen Schaffen einen Flow-Zustand (völliges Aufgehen in der Tätigkeit)?',
       relatedArea: RelaxationType.creative,
-      options: [
-        'Gar nicht entspannend',
-        'Wenig entspannend',
-        'Etwas entspannend',
-        'Sehr entspannend',
-        'Extrem entspannend'
-      ],
+      options: ['Nie', 'Selten', 'Manchmal', 'Oft', 'Sehr oft'],
     ),
     Question(
       id: 'creative_3',
-      question: 'Nutzt du kreative Ausdrucksformen, um Stress abzubauen?',
+      question:
+          'Wie wichtig ist es dir, etwas mit deinen Händen zu erschaffen oder gestalten?',
       relatedArea: RelaxationType.creative,
-      options: ['Nie', 'Selten', 'Manchmal', 'Oft', 'Sehr oft'],
+      options: [
+        'Unwichtig',
+        'Wenig wichtig',
+        'Etwas wichtig',
+        'Wichtig',
+        'Sehr wichtig'
+      ],
     ),
   ];
 }

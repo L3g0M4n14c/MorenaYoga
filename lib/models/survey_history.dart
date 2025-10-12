@@ -9,6 +9,8 @@ class SurveyHistoryEntry {
   final Map<RelaxationType, RelaxationLevel> levels;
   final List<RelaxationType> deficitAreas;
   final double averageScore;
+  final SurveyType surveyType;
+  final RelaxationType? specializedArea;
 
   SurveyHistoryEntry({
     required this.id,
@@ -17,6 +19,8 @@ class SurveyHistoryEntry {
     required this.levels,
     required this.deficitAreas,
     required this.averageScore,
+    this.surveyType = SurveyType.general,
+    this.specializedArea,
   });
 
   // Factory Konstruktor zum Erstellen aus einem SurveyResult
@@ -32,6 +36,8 @@ class SurveyHistoryEntry {
       levels: result.levels,
       deficitAreas: result.deficitAreas,
       averageScore: averageScore,
+      surveyType: result.surveyType,
+      specializedArea: result.specializedArea,
     );
   }
 
@@ -52,6 +58,8 @@ class SurveyHistoryEntry {
       'deficitAreas':
           deficitAreas.map((area) => area.toString().split('.').last).toList(),
       'averageScore': averageScore,
+      'surveyType': surveyType.toString().split('.').last,
+      'specializedArea': specializedArea?.toString().split('.').last,
     };
   }
 
@@ -84,6 +92,17 @@ class SurveyHistoryEntry {
               ))
           .toList(),
       averageScore: (json['averageScore'] as num).toDouble(),
+      surveyType: json['surveyType'] != null
+          ? SurveyType.values.firstWhere(
+              (e) => e.toString().split('.').last == json['surveyType'],
+              orElse: () => SurveyType.general,
+            )
+          : SurveyType.general,
+      specializedArea: json['specializedArea'] != null
+          ? RelaxationType.values.firstWhere(
+              (e) => e.toString().split('.').last == json['specializedArea'],
+            )
+          : null,
     );
   }
 

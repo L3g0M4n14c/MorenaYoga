@@ -373,6 +373,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
 
   Widget _buildHistoryItem(SurveyHistoryEntry entry) {
     final dateFormat = DateFormat('dd.MM.yyyy, HH:mm');
+    final isSpecialized = entry.surveyType == SurveyType.specialized;
 
     return Card(
       margin: const EdgeInsets.only(bottom: 12),
@@ -388,11 +389,58 @@ class _HistoryScreenState extends State<HistoryScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    dateFormat.format(entry.timestamp),
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          dateFormat.format(entry.timestamp),
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        if (isSpecialized) ...[
+                          const SizedBox(height: 4),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.psychology,
+                                size: 14,
+                                color: AppTheme.secondaryColor,
+                              ),
+                              const SizedBox(width: 4),
+                              Text(
+                                'Spezialisiert: ${RelaxationArea.getByType(entry.specializedArea!).name}',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: AppTheme.secondaryColor,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ] else ...[
+                          const SizedBox(height: 4),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.quiz,
+                                size: 14,
+                                color: Colors.grey[600],
+                              ),
+                              const SizedBox(width: 4),
+                              Text(
+                                'Allgemeiner Fragebogen',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.grey[600],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ],
                     ),
                   ),
                   Container(
@@ -419,8 +467,9 @@ class _HistoryScreenState extends State<HistoryScreen> {
               Wrap(
                 spacing: 8,
                 runSpacing: 8,
-                children: RelaxationType.values.map((type) {
-                  final score = entry.scores[type] ?? 0;
+                children: entry.scores.entries.map((scoreEntry) {
+                  final type = scoreEntry.key;
+                  final score = scoreEntry.value;
                   final area = RelaxationArea.getByType(type);
                   return Container(
                     padding: const EdgeInsets.symmetric(

@@ -7,6 +7,7 @@ import '../theme/app_theme.dart';
 import 'recommendations_screen.dart';
 import 'welcome_screen.dart';
 import 'history_screen.dart';
+import 'category_selection_screen.dart';
 
 class ResultScreen extends StatelessWidget {
   const ResultScreen({super.key});
@@ -100,6 +101,33 @@ class ResultScreen extends StatelessWidget {
                   if (result.deficitAreas.isNotEmpty) ...[
                     SizedBox(
                       width: double.infinity,
+                      child: ElevatedButton.icon(
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => CategorySelectionScreen(
+                                deficitAreas: result.deficitAreas,
+                              ),
+                            ),
+                          );
+                        },
+                        icon: const Icon(Icons.psychology),
+                        label: const Text(
+                          'Spezialisierten Fragebogen starten',
+                          style: TextStyle(fontSize: 16),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: AppTheme.secondaryColor,
+                          padding: const EdgeInsets.symmetric(vertical: 16),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 12),
+                    SizedBox(
+                      width: double.infinity,
                       child: ElevatedButton(
                         onPressed: () {
                           Navigator.of(context).push(
@@ -118,7 +146,7 @@ class ResultScreen extends StatelessWidget {
                           ),
                         ),
                         child: const Text(
-                          'Empfehlungen ansehen',
+                          'Allgemeine Empfehlungen ansehen',
                           style: TextStyle(fontSize: 16),
                         ),
                       ),

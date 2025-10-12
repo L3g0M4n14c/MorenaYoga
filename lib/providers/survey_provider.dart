@@ -36,10 +36,12 @@ class SurveyProvider extends ChangeNotifier {
   void nextQuestion() {
     if (hasNextQuestion) {
       _currentQuestionIndex++;
+      notifyListeners();
     } else {
       _calculateResult();
+      _currentQuestionIndex++; // Setze Index über die letzte Frage hinaus, um isCompleted zu aktivieren
+      notifyListeners();
     }
-    notifyListeners();
   }
 
   void previousQuestion() {

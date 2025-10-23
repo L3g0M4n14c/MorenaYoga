@@ -11,11 +11,11 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: AppTheme.primaryColor,
         elevation: 0,
         actions: [
           IconButton(
-            icon: const Icon(Icons.info_outline),
+            icon: const Icon(Icons.info_outline, color: Colors.white),
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
@@ -26,7 +26,7 @@ class WelcomeScreen extends StatelessWidget {
             tooltip: '7 Faktoren der Entspannung',
           ),
           IconButton(
-            icon: const Icon(Icons.history),
+            icon: const Icon(Icons.history, color: Colors.white),
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
@@ -51,18 +51,17 @@ class WelcomeScreen extends StatelessWidget {
         ),
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.all(24.0),
+            padding:
+                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Spacer(),
                 // Logo/Icon
                 Container(
-                  width: 120,
-                  height: 120,
+                  width: 150,
+                  height: 150,
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(60),
+                    borderRadius: BorderRadius.circular(75),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black.withValues(alpha: 0.1),
@@ -71,13 +70,18 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  child: const Icon(
-                    Icons.self_improvement,
-                    size: 60,
-                    color: AppTheme.primaryColor,
+                  child: Padding(
+                    padding: const EdgeInsets.all(11),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(30),
+                      child: Image.asset(
+                        'assets/images/AppIcon.png',
+                        fit: BoxFit.contain,
+                      ),
+                    ),
                   ),
                 ),
-                const SizedBox(height: 32),
+                const SizedBox(height: 12),
 
                 // Titel
                 const Text(
@@ -88,7 +92,7 @@ class WelcomeScreen extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 8),
 
                 // Untertitel
                 const Text(
@@ -99,24 +103,24 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 48),
+                const SizedBox(height: 12),
 
-                // Beschreibung
+                // Beschreibung Card
                 Card(
                   elevation: 8,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
+                    borderRadius: BorderRadius.circular(12),
                   ),
                   child: const Padding(
-                    padding: EdgeInsets.all(24),
+                    padding: EdgeInsets.all(12),
                     child: Column(
                       children: [
                         Icon(
                           Icons.psychology,
-                          size: 48,
+                          size: 36,
                           color: AppTheme.primaryColor,
                         ),
-                        SizedBox(height: 16),
+                        SizedBox(height: 8),
                         Text(
                           'Finde heraus, in welchen der 7 Entspannungsarten du Defizite hast',
                           style: TextStyle(
@@ -125,7 +129,7 @@ class WelcomeScreen extends StatelessWidget {
                           ),
                           textAlign: TextAlign.center,
                         ),
-                        SizedBox(height: 24),
+                        SizedBox(height: 8),
                         Text(
                           '🧘‍♀️ Körperlich  🧠 Mental  👁️ Sensorisch\n❤️ Emotional  👥 Sozial  🎨 Kreativ  🙏 Spirituell',
                           style: TextStyle(
@@ -139,7 +143,7 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                 ),
 
-                const Spacer(),
+                const SizedBox(height: 12),
 
                 // Start Button
                 SizedBox(
@@ -157,9 +161,9 @@ class WelcomeScreen extends StatelessWidget {
                       foregroundColor: AppTheme.primaryColor,
                       elevation: 8,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16),
+                        borderRadius: BorderRadius.circular(12),
                       ),
-                      padding: const EdgeInsets.symmetric(vertical: 20),
+                      padding: const EdgeInsets.symmetric(vertical: 12),
                     ),
                     child: const Text(
                       'Test starten',
@@ -170,7 +174,7 @@ class WelcomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 12),
+                const SizedBox(height: 8),
 
                 // Info Button
                 SizedBox(
@@ -189,13 +193,12 @@ class WelcomeScreen extends StatelessWidget {
                       foregroundColor: Colors.white,
                       side: const BorderSide(color: Colors.white, width: 2),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16),
+                        borderRadius: BorderRadius.circular(12),
                       ),
-                      padding: const EdgeInsets.symmetric(vertical: 16),
+                      padding: const EdgeInsets.symmetric(vertical: 12),
                     ),
                   ),
                 ),
-                const SizedBox(height: 32),
               ],
             ),
           ),
